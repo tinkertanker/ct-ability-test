@@ -30,7 +30,8 @@ h1 { margin: 0 0 6px; font-size: 22px; }
 
 .row { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
 label { display: block; font-weight: 600; margin: 8px 0 6px; }
-input[type="text"] {
+input[type="text"],
+input[type="number"] {
   width: 100%;
   padding: 10px 12px;
   border: 1px solid #d7d7e2;
