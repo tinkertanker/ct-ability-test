@@ -6,7 +6,7 @@
 
   const state = {
     name: "",
-    group: "",
+    age: "",
     i: 0,
     answers: {},   // { questionId: answer }  — answer shape depends on qType
     startedAt: null
@@ -49,8 +49,8 @@
         <label>Name</label>
         <input id="name" type="text" placeholder="e.g. Joe Tan" autocomplete="off" />
 
-        <label>Class / Group</label>
-        <input id="group" type="text" placeholder="e.g. P6-3 / S1-2" autocomplete="off" />
+        <label>Age</label>
+        <input id="age" type="number" placeholder="e.g. 12" autocomplete="off" min="1" max="120" />
 
         <hr />
 
@@ -69,20 +69,20 @@
     `;
 
     const nameEl = document.getElementById("name");
-    const groupEl = document.getElementById("group");
+    const ageEl = document.getElementById("age");
     const btn = document.getElementById("startBtn");
 
     btn.addEventListener("click", () => {
       const name = nameEl.value.trim();
-      const group = groupEl.value.trim();
+      const age = ageEl.value.trim();
 
-      if (!name || !group) {
-        alert("Please fill in your name and class/group.");
+      if (!name || !age) {
+        alert("Please fill in your name and age.");
         return;
       }
 
       state.name = name;
-      state.group = group;
+      state.age = age;
       state.startedAt = Date.now();
       state.i = 0;
       state.answers = {};
@@ -512,7 +512,7 @@
 
     const payload = {
       name: state.name,
-      group: state.group,
+      age: state.age,
       timeMin: mins,
       score,
       max,
@@ -546,7 +546,7 @@
     screen.innerHTML = `
       <div class="card">
         <h2>Results</h2>
-        <p><strong>${escapeHtml(state.name)}</strong> (${escapeHtml(state.group)})</p>
+        <p><strong>${escapeHtml(state.name)}</strong> (Age: ${escapeHtml(state.age)})</p>
         <p>Score: <strong>${score} / ${max}</strong> (${pct}%)${mins ? ` · about ${mins} min` : ""}</p>
 
         <hr />
