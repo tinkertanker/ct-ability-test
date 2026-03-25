@@ -1,17 +1,16 @@
 # CT Quest
 
-This project now runs as a single Node.js app:
+- `web/` — student quiz and teacher portal UI (static files)
+- `backend/` — Express server that serves the frontend, handles teacher login, creates join-code events, and stores student results in SQLite
 
-- `web/` contains the student quiz and teacher portal UI
-- `backend/` serves the frontend, handles teacher login, creates join-code events, and stores student results in SQLite
+The backend serves the frontend directly — there is only one process to run.
 
 ## Local setup
 
 1. Install Node.js 20 or newer.
-2. From the repo root, install backend dependencies:
+2. Install dependencies:
 
 ```bash
-cd backend
 npm install
 ```
 

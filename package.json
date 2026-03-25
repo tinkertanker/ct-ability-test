@@ -1,0 +1,11 @@
+{
+  "name": "ct-ability-test",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "backend"
+  ],
+  "scripts": {
+    "start": "npm start --prefix backend"
+  }
+}
