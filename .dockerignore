@@ -1,0 +1,15 @@
+.git
+.gitignore
+.env
+.env.*
+.DS_Store
+
+node_modules
+backend/node_modules
+backend/data
+
+web/node_modules
+web/dist
+
+docker-compose.yml
+*.md
